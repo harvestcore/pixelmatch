@@ -1,7 +1,3 @@
-"use strict";
-
-module.exports = pixelmatch;
-
 const defaultOptions = {
     threshold: 0.1, // matching threshold (0 to 1); smaller is more sensitive
     includeAA: false, // whether to skip anti-aliasing detection
@@ -12,7 +8,7 @@ const defaultOptions = {
     diffMask: false, // draw the diff over a transparent background (a mask)
 };
 
-function pixelmatch(img1, img2, output, options) {
+export function pixelmatch(img1, img2, output, options) {
     if (!isPixelData(img1) || !isPixelData(img2) || (output && !isPixelData(output)))
         throw new Error("Image data: Uint8Array, Uint8ClampedArray or Buffer expected.");
 
